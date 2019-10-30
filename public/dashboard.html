@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to My Plant Journal!</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="shadow col-md-8 border border-primary rounded" style='height: 625px;font-family: fantasy;'>
+                Welcome!
+                <div class="container-fluid">
+                    <div class="row no-gutter">
+                        <div class="shadow col-md-12 border border-primary rounded" style='height: 575px;' id="wrapper">
+                            Width 25.5%
+
+                            <div class="container-fluid">
+                                <div class="row no-gutter">
+
+                                    <div class="shadow col-md-12 border border-primary rounded"> Journal
+
+                                        <div class="row insideRow" id="boxesContent">
+
+                                            <!----------------------------------------------End of copy of second set of six cards-->
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4 border border-success"> Width 50% </div>
+                        </div> -->
+                </div>
+            </div>
+
+            <!-------------------End of The cards in cards in general------------------------------------------------->
+
+            <div class="col-md-4" id="rightPanel">
+
+                <div class="row" id="right-panel-text">
+                    <nav id="dropdown">
+                        <img id="user" src="./assets/img/user.svg" style="margin-left: 350px; margin-right: 5px">
+                        <a href="#" id="signout" style="color:white">Sign Out</a>
+                    </nav>
+                </div>
+                <div class="login d-flex align-items-center py-5 border border-success">
+
+                    <!------------------------Me trying out the new file input----------------------------->
+
+                    <!--<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+                    <div class="file-upload" id="fileUpload">
+                        <button class="file-upload-btn" type="button"
+                            onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+
+                        <div class="image-upload-wrap">
+                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <div class="drag-text">
+                                <h3>Drag and drop a file or select add Image</h3>
+                            </div>
+                        </div>
+                        <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="your image" id="fileUploadImage" />
+                            <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
+                                        class="image-title">Uploaded Image</span></button>
+                            </div>
+                        </div>
+                        <button class="submit-file" type="button" id="submitImage">Submit Image</button>
+                        <!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Submit Image</button> -->
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!--end of right fixed right panel html----------------------------------------------------->
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--compiled and minified javascript-->
+    <script src="./assets/javascript/dashboard.js"></script>
+    <script src="./assets/javascript/API.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Sign-In</title>
+</head>
+
+<body>
+  <div class="row" id="no-margin">
+    <div class="col s6" id="no-padding">
+      <div class="bg-image"></div>
+    </div>
+    <div class="col s6" id="no-padding">
+      <div>
+        <div class="row flex" id="no-margin">
+          <form id="signin-form" class="form-wrap">
+            <div class="text-error" style="color: red" id="login-error"></div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email-signin" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password-signin" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+
+            <div>
+              <button id="signin-modal-button" class="btn waves-effect waves-light" type="button" name="action">Sign
+                In
+              </button>
+            </div>
+            <!---------------Forgot Password Modal Modal--------------------------------------------------------------------->
+            <div>
+              <a class="modal-trigger" href="#modal2">Forgot Password?</a><br>
+              <a class="modal-trigger" id="signup-button" href="#modal1">Sign Up</a>
+
+            </div>
+          </form>
+          <!---------------Sign Up Modal--------------------------------------------------------------------->
+
+          <!-- Modal Trigger -->
+          <!-- <a class="modal-trigger" id="signup-button" href="#modal1">Sign Up</a> -->
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <form id="signup-modal-form" class="row col s12">
+                <div class="text-error" style="color: red" id="signup-error"></div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email-modal-signup" type="email" class="validate">
+                    <label for="email">Email</label>
+                    <span class="helper-text" data-error="wrong"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="password-modal-signup" type="password" class="validate">
+                    <label for="password">Password</label>
+                    <span class="helper-text" data-success="Password must be atleast 6
+                      characters"></span>
+                  </div>
+                </div>
+                <div class="right-wrap">
+                  <button id="button-modal-signup" class="btn waves-effect waves-light" type="submit" name="action">Sign
+                    Up
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!----------------------------------------------------------------------------------------------------------->
+          <!-- Modal Structure/ forgot password -->
+
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <form class="row col s12">
+                <!-- <div class="row">
+                      <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                      </div>
+                    </div> -->
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email-modal-forgot" type="email" class="validate">
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <div class="right-wrap">
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!------------------------trying out routing button to see if I staty logged in-->
+
+  <!-- <div>
+    <a href="./dashboard.html">
+      <button id="signin-modal-button" class="btn waves-effect waves-light" type="submit" name="action">Reroute
+      </button></a>
+  </div> -->
+
+  <!---------------------------------------------------------------------------------------------------------- 
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="login-heading mb-4 justify-content-center">Sign-In</h3>
+                <form id="signin-form">
+                  <div class="form-label-group">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+                      autofocus>
+                    <label for="inputEmail">Email address</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <label for="inputPassword">Password</label>
+                  </div>
+
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Remember password</label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                    id="signInButton" type="submit">Sign in</button>
+                  <div class="text-center">
+                    <a class="small" href="#">Forgot password?</a></div>
+                  <div class="text-center">
+                    <a class="small" id="signup" href="#" data-target="modal-signup">Sign-Up</a></div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script> -->
+
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script> -->
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!--compiled and minified javascript-->
+  <!-- <script src="./assets/javascript/auth.js"></script>
+  <script src="./assets/javascript/index.js"></script> -->
+  <script src="./assets/javascript/login.js"></script>
+
+</body>
