@@ -159,7 +159,3 @@ $(document).ready(function () {
 
 /////////////////////Sign out to work/////
 
-document
-    .getElementById('button-modal-signup')
-    .addEventListener('click', e => {
-      e.preventDefault()
