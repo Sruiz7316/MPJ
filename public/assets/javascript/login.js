@@ -1,5 +1,7 @@
 // Initializing Login Modals//
-const apiBaseUrl = (process.env.NODE_ENV == 'production') ? 'https://myplantjournal.herokuapp.com' : 'http://localhost:3000'
+const apiBaseUrl = 'https://myplantjournal.herokuapp.com'; // use this for heroku
+// const  apiBaseUrl = 'http://localhost:3000'; // use this for local
+
 $(document).ready(() => {
   // login
   document
