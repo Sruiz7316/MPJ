@@ -1,6 +1,6 @@
 // Initializing Login Modals//
-// const apiBaseUrl = 'https://myplantjournal.herokuapp.com'; // use this for heroku
-const  apiBaseUrl = 'http://localhost:3000'; // use this for local
+const apiBaseUrl = 'https://myplantjournal.herokuapp.com' // use this for heroku
+// const  apiBaseUrl = 'http://localhost:3000'; // use this for local
 
 $(document).ready(() => {
   // login
@@ -9,7 +9,7 @@ $(document).ready(() => {
     .addEventListener('click', e => {
       const email = $('#email-signin').val()
       const password = $('#password-signin').val()
-      console.log('emmmm ====== ', email, password);
+      console.log('emmmm ====== ', email, password)
       axios
         .post(apiBaseUrl + '/api/login', { email, password })
         .then(cred => {
