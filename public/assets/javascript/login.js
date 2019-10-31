@@ -1,5 +1,5 @@
 // Initializing Login Modals//
-const apiBaseUrl = 'http://localhost:3000'
+const apiBaseUrl = (process.env.NODE_ENV == 'production') ? 'https://myplantjournal.herokuapp.com' : 'http://localhost:3000'
 $(document).ready(() => {
   // login
   document
@@ -13,7 +13,7 @@ $(document).ready(() => {
         .then(cred => {
           console.log('signin successful', cred)
           // login successful, redirect to members page
-           location.href = '/members'
+          location.href = '/members'
         })
         .catch(e => {
           $('#login-error').html('<p>Login Failed</p>')
