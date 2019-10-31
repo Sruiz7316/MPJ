@@ -7,7 +7,8 @@ $(document).ready(() => {
     .addEventListener('click', e => {
       const email = $('#email-signin').val()
       const password = $('#password-signin').val()
-      console.log('emmmm ====== ', email, password)
+      console.log('emmmm ====== ', email, password);
+      console.log('ENV FILE =*****', process.env.NODE_ENV);
       axios
         .post(apiBaseUrl + '/api/login', { email, password })
         .then(cred => {
