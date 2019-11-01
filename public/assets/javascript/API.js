@@ -36,10 +36,10 @@ function postBinaryImage (imageData) {
   console.log('Posting image...', imageData)
   return $.ajax({
     url:
-      'https://myplantjournal.cognitiveservices.azure.com/customvision/v3.0/Prediction/a06d1a56-f77c-4caf-ae99-fbecf3f9fce2/classify/iterations/carnation%20and%20roses/image?Prediction-Key=6e214e70c9104648a2b1f3bddba828db&Content-Type=application/octet-stream',
+      'https://myplantjournal.cognitiveservices.azure.com/customvision/v3.0/Prediction/a06d1a56-f77c-4caf-ae99-fbecf3f9fce2/classify/iterations/carnation%20and%20roses/image',
     type: 'POST',
     headers: {
-      'Prediction-Key': process.env.COMPUTER_VISION_SECRET
+      'Prediction-Key': '6e214e70c9104648a2b1f3bddba828db'
     },
     contentType: 'application/octet-stream',
     data: imageData,
