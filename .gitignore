@@ -1,3 +1,5 @@
 node_modules
 .env
 .public/assets/API.js
+.DS_Store
+public\assets\javascript\API.js
