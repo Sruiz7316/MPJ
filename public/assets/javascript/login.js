@@ -1,6 +1,6 @@
 // Initializing Login Modals//
-const apiBaseUrl = 'https://myplantjournal.herokuapp.com' // use this for heroku
-// const apiBaseUrl = 'http://localhost:3000' // use this for local
+// const apiBaseUrl = 'https://myplantjournal.herokuapp.com' // use this for heroku
+const apiBaseUrl = 'http://localhost:3000' // use this for local
 
 $(document).ready(() => {
   // login

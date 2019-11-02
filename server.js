@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const session = require('express-session')
 const bodyParser = require('body-parser')
-const dotenv = require('dotenv')
+const dotenv = require('dotenv').config()
 const path = require('path')
 // const routes = require('./app/routes/htmlRoutes')
 const db = require('./models')
@@ -10,7 +10,9 @@ const passport = require('./config/passport.js')
 const Sequelize = require('sequelize')
 
 // configure dotenv file
-dotenv.config()
+// dotenv.config()
+
+// console.log(process.env)
 
 // For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }))
