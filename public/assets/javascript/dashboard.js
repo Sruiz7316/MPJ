@@ -103,7 +103,6 @@ $('.image-upload-wrap').bind('dragleave', function () {
 //     reader.readAsDataURL(file)
 //   })
 // })
-
 function addImageToBox () {
   let uploadImageSrc = $('#fileUploadImage').attr('src')
 
@@ -135,18 +134,35 @@ function addImageToBox () {
     var binaryReader = new FileReader()
 
     binaryReader.onload = function (e) {
-      var request = postBinaryImage(e.target.result) // send the array of bytes
-      // when request is done
-      // show the result to the user.
-      request.done(function (result) {
-        // console log the response
-        console.log('The result from the api is', result)
-        if (result.predictions) {
-          var prediction = getFirstPredictionFromResult(result.predictions)
-          // prediction == carnations,roses...
+      console.log('loaded!', binaryReader.result)
+      $.ajax({
+        url: '/api/upload-image',
+        type: 'POST',
+        // contentType: 'application/octet-stream',
+        contentType: 'application/octet-stream',
+        data: binaryReader.result,
+        processData: false,
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log('error!', arguments)
+        },
+        success: function (data, textStatus, jqXHR) {
+          console.log('data success', data)
+          var prediction = getFirstPredictionFromResult(data.predictions)
           $('#prediction-name').text(prediction)
         }
       })
+      // var request = postbinaryImage(e.target.result) // send the array of bytes
+      // // when request is done
+      // // show the result to the user.
+      // request.done(function (result) {
+      //   // console log the response
+      //   console.log('The result from the api is', result)
+      //   if (result.predictions) {
+      //     var prediction = getFirstPredictionFromResult(result.predictions)
+      //     // prediction == carnations,roses...
+      //     $('#prediction-name').text(prediction)
+      //   }
+      // })
     }
 
     binaryReader.readAsArrayBuffer(imageFile)
@@ -157,5 +173,4 @@ $(document).ready(function () {
   $('#submitImage').click(addImageToBox)
 })
 
-/////////////////////Sign out to work/////
-
+/// //////////////////Sign out to work/////
